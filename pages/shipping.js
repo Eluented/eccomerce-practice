@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import { useForm } from "react-hook-form";
 import { Store } from "../utils/Store";
 import Cookies from "js-cookie";
+import { Router, useRouter } from "next/router";
 
 export default function ShippingScreen() {
   const {
@@ -14,6 +15,7 @@ export default function ShippingScreen() {
     getValues,
   } = useForm();
 
+  const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
   const { shippingAddress } = cart;
@@ -45,6 +47,9 @@ export default function ShippingScreen() {
         },
       })
     );
+
+    router.push('/payment');
+    
   };
   return (
     <Layout title="Shipping Address">
@@ -143,3 +148,5 @@ export default function ShippingScreen() {
     </Layout>
   );
 }
+
+ShippingScreen.auth = true;
