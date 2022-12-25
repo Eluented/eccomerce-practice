@@ -32,7 +32,7 @@ export default function SearchBar() {
           ml: 1,
           flex: 1,
           "& .MuiOutlinedInput-root": {
-            "& > fieldset": { borderColor: "white" },
+            "& > fieldset": { borderColor: "white", borderRadius: "32px" },
           },
           "& .MuiOutlinedInput-root.Mui-focused": {
             "& > fieldset": {

@@ -46,7 +46,7 @@ export default function Layout({ title, children }) {
 
       <div className="flex min-h-screen flex-col justify-between">
         <header>
-          <nav className="flex justify-between shadow-md items-center fixed w-full h-20 z-[100] py-2.5 px-5">
+          <nav className="flex justify-between bg-dark-blue shadow-md items-center relative w-full h-20 z-[100] py-2.5 px-5">
             <Link className="text-lg font-bold" href="/">
               <Image src="/images/drip_store_2.png" width={200} height={100} />
             </Link>
@@ -55,19 +55,19 @@ export default function Layout({ title, children }) {
 
             <ul className="flex gap-5">
               <li>
-                <Link className="text-lg font-bold p-2" href="/login">
+                <Link className="text-lg font-bold p-2 head" href="/login">
                   Bruh
                 </Link>
               </li>
 
               <li>
-                <Link className="text-lg font-bold p-2" href="/login">
+                <Link className="text-lg font-bold p-2 head" href="/login">
                   Bruh12
                 </Link>
               </li>
 
               <li>
-                <Link className="text-lg font-bold p-2" href="/cart">
+                <Link className="text-lg font-bold p-2 head" href="/cart">
                   Cart
                   {cartItemsCount > 0 && (
                     <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
@@ -82,7 +82,7 @@ export default function Layout({ title, children }) {
                   "Loading"
                 ) : session?.user ? (
                   <Menu as="div" className="relative inline-block ">
-                    <Menu.Button className="text-blue-600">
+                    <Menu.Button className="head">
                       <span className="text-lg font-bold">
                         {session.user.name}
                       </span>
