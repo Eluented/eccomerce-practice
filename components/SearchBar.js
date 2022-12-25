@@ -8,18 +8,27 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { InputAdornment, TextField } from "@mui/material";
 import { color } from "@mui/system";
 
-
 export default function SearchBar() {
   const [showClearIcon, setShowClearIcon] = useState("none");
+  const [searchInput, setSearchInput] = useState("");
 
-  var handleChange = (event) => {
-    setShowClearIcon(event.target.value === "" ? "none" : "flex");
+  const handleChange = (e) => {
+    setShowClearIcon(e.target.value === "" ? "none" : "flex");
+
+    if (e.target.value.length < 1 ) {
+      setShowClearIcon("none");
+    }
+    setSearchInput(e.target.value);
   };
 
-  const handleClick = () => {
-    // TODO: Clear the search input
-    console.log("clicked the clear icon...");
+  const handleClear = () => {
+    setSearchInput("");
   };
+
+  const handleSearch = () => {
+    // make an api call...
+  };
+  
   return (
     <Paper
       component="form"
@@ -27,7 +36,8 @@ export default function SearchBar() {
       sx={{ display: "flex", alignItems: "center", width: 400 }}
     >
       <TextField
-        color=""
+        onChange={handleChange}
+        value={searchInput}
         className="rounded full"
         sx={{
           ml: 1,
@@ -44,10 +54,9 @@ export default function SearchBar() {
             "& > fieldset": {
               borderColor: "white",
             },
-          }
+          },
         }}
         placeholder="Search for Products"
-        onChange={handleChange}
         InputProps={{
           "aria-label": "search for products",
           startAdornment: (
@@ -61,9 +70,15 @@ export default function SearchBar() {
             <InputAdornment
               position="end"
               style={{ display: showClearIcon }}
-              onClick={handleClick}
+              onClick={handleClear}
+              area-label="clear text button"
             >
-              <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+              <IconButton
+                type="button"
+                // onClick={handleClick}
+                sx={{ p: "10px" }}
+                aria-label="search button"
+              >
                 <ClearIcon />
               </IconButton>
             </InputAdornment>
