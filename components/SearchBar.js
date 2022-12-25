@@ -8,6 +8,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { InputAdornment, TextField } from "@mui/material";
 import { color } from "@mui/system";
 
+
 export default function SearchBar() {
   const [showClearIcon, setShowClearIcon] = useState("none");
 
@@ -23,7 +24,7 @@ export default function SearchBar() {
     <Paper
       component="form"
       className="flex basis-5/12 w-full rounded-full px-3"
-      sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 400 }}
+      sx={{ display: "flex", alignItems: "center", width: 400 }}
     >
       <TextField
         color=""

@@ -14,7 +14,8 @@ import InputBase from "@mui/material/InputBase";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-import SearchBar from './SearchBar';
+import SearchBar from "./SearchBar";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export default function Layout({ title, children }) {
   const { status, data: session } = useSession();
@@ -59,24 +60,6 @@ export default function Layout({ title, children }) {
                   Bruh
                 </Link>
               </li>
-
-              <li>
-                <Link className="text-lg font-bold p-2 head" href="/login">
-                  Bruh12
-                </Link>
-              </li>
-
-              <li>
-                <Link className="text-lg font-bold p-2 head" href="/cart">
-                  Cart
-                  {cartItemsCount > 0 && (
-                    <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
-                      {cartItemsCount}
-                    </span>
-                  )}
-                </Link>
-              </li>
-
               <li>
                 {status === "loading" ? (
                   "Loading"
@@ -117,6 +100,23 @@ export default function Layout({ title, children }) {
                     Login
                   </Link>
                 )}
+              </li>
+
+              <li>
+                <Link className="text-lg font-bold p-2 head" href="/login">
+                  Bruh12
+                </Link>
+              </li>
+
+              <li>
+                <Link className="text-lg font-bold p-2 head" href="/cart">
+                  <i>
+                    <ShoppingCartIcon />
+                  </i>
+                  {cartItemsCount > 0 && (
+                    <span className="count">{cartItemsCount}</span>
+                  )}
+                </Link>
               </li>
             </ul>
           </nav>

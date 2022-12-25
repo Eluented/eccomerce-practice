@@ -43,3 +43,20 @@ body {
 .dropdown-link {
   @apply flex p-2 hover:bg-gray-200;
 }
+
+.count {
+  position: absolute;
+  z-index: 2;
+  font-size: 11px;
+  border-radius: 50%;
+  background: #d60b28;
+  width: 16px;
+  height: 16px;
+  line-height:16px;
+  text-align: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  vertical-align: top;
+  margin-left: -10px; 
+}
