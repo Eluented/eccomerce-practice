@@ -49,7 +49,7 @@ export default function Layout({ title, children }) {
         <header>
           <nav className="flex justify-between bg-dark-blue shadow-md items-center relative w-full h-20 z-[100] py-2.5 px-5">
             <Link className="text-lg font-bold" href="/">
-              <Image src="/images/drip_store_2.png" width={200} height={100} />
+              <Image src="/images/drip_store_2.png" width={200} height={100} alt="Drip Store Logo" priority/>
             </Link>
 
             <SearchBar />

@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import { SessionProvider, useSession } from "next-auth/react";
 import { StoreProvider } from "../utils/Store";
 import { useRouter } from "next/router";
+import { appWithTranslation } from 'next-i18next'
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
@@ -34,4 +35,4 @@ function Auth({ children }) {
 
   return children;
 }
-export default MyApp;
+export default appWithTranslation(MyApp);
